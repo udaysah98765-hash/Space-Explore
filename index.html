@@ -1,0 +1,161 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>3D Space Explorer</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <canvas id="space"></canvas>
+
+  <div class="noise"></div>
+
+  <aside class="sidebar">
+    <div class="brand">
+      <div class="brand-orbit"></div>
+      <div>
+        <b>SPACE</b>
+        <span>EXPLORER</span>
+      </div>
+    </div>
+
+    <nav>
+      <button class="nav active" data-target="home">⌂ <span>Home</span></button>
+      <button class="nav" data-target="solar">◉ <span>Solar System</span></button>
+      <button class="nav" data-target="planets">◌ <span>Planets</span></button>
+      <button class="nav" data-target="missions">✦ <span>Missions</span></button>
+      <button class="nav" data-target="gallery">✧ <span>Galaxy</span></button>
+      <button class="nav" data-target="premium">💎 <span>Premium</span></button>
+      <button class="nav" data-target="contact">☎ <span>Contact Us</span></button>
+    </nav>
+
+    <div class="profile">
+      <div class="avatar">🚀</div>
+      <div><b>Explorer</b><small>Level 42</small></div>
+    </div>
+  </aside>
+
+  <main>
+    <header class="topbar">
+      <div class="search">⌕ <input id="search" placeholder="Search planets, missions..." /></div>
+      <div class="actions">
+        <button id="sound" class="icon">🔊</button>
+        <button id="fullscreen" class="icon">⛶</button>
+      </div>
+    </header>
+
+    <section id="home" class="hero">
+      <div class="hero-copy">
+        <div class="eyebrow">WELCOME, EXPLORER</div>
+        <h1>3D SPACE<br><span>EXPLORER</span></h1>
+        <p>Explore the universe in interactive 3D. Drag to rotate, scroll to zoom, and discover planets in cinematic motion.</p>
+        <div class="buttons">
+          <button id="explore" class="primary">✦ EXPLORE NOW</button>
+          <button id="random" class="secondary">↻ RANDOM TOUR</button>
+        </div>
+        <div class="hint">🖱 Drag • Scroll • Touch to explore in 360°</div>
+      </div>
+
+      <div class="planet-card">
+        <div class="mini-orb" id="miniOrb"></div>
+        <div>
+          <div class="card-title" id="selectedName">EARTH</div>
+          <div class="line"></div>
+          <small id="selectedType">Terrestrial Planet</small>
+          <p id="selectedInfo">Our home world • 1 Moon</p>
+          <button id="details">VIEW DETAILS →</button>
+        </div>
+      </div>
+    </section>
+
+    <section id="solar" class="panel">
+      <div class="section-title"><h2>Discover Planets</h2><span>360° INTERACTIVE</span></div>
+      <div id="planetList" class="planet-list"></div>
+    </section>
+
+    <section id="planets" class="panel">
+      <div class="section-title"><h2>Popular Missions</h2><span>EXPLORE</span></div>
+      <div class="missions">
+        <article><div class="mission-img moon"></div><b>Lunar Explorer</b><small>Explore the Moon</small><button>VIEW MISSION</button></article>
+        <article><div class="mission-img mars"></div><b>Mars Rover</b><small>Journey to Mars</small><button>VIEW MISSION</button></article>
+        <article><div class="mission-img jupiter"></div><b>Jupiter Orbiter</b><small>Study the Giant</small><button>VIEW MISSION</button></article>
+        <article><div class="mission-img voyager"></div><b>Voyager 1</b><small>Interstellar Journey</small><button>VIEW MISSION</button></article>
+      </div>
+    </section>
+
+    <section id="missions" class="panel stats-panel">
+      <div class="section-title"><h2>Universe Stats</h2><span>LIVE SIMULATION</span></div>
+      <div class="stats">
+        <div><strong>8</strong><span>Planets</span></div>
+        <div><strong>200+</strong><span>Moons</span></div>
+        <div><strong>100B+</strong><span>Stars</span></div>
+        <div><strong>2M+</strong><span>Galaxies</span></div>
+      </div>
+    </section>
+
+    <section id="gallery" class="panel">
+      <div class="section-title"><h2>Deep Space</h2><span>BEYOND THE SOLAR SYSTEM</span></div>
+      <div class="galaxy-text">Look deeper. The universe is bigger than imagination.</div>
+    </section>
+    <section id="premium" class="panel premium-panel">
+      <div class="section-title"><h2>💎 Premium Explorer</h2><span>AD-FREE EXPERIENCE</span></div>
+      <div class="premium-card">
+        <div>
+          <div class="premium-badge">PRO</div>
+          <h3>Explore Without Ads</h3>
+          <p>Unlock a cleaner, distraction-free 3D Space Explorer experience.</p>
+          <ul>
+            <li>✓ Remove advertisements</li>
+            <li>✓ Premium explorer badge</li>
+            <li>✓ Future premium features</li>
+            <li>✓ Priority feature access</li>
+          </ul>
+        </div>
+        <div class="premium-price">
+          <strong>Premium</strong>
+          <span>Paid feature</span>
+          <button id="premiumBtn" class="primary">UNLOCK PREMIUM</button>
+          <small>Payment gateway can be connected later.</small>
+        </div>
+      </div>
+    </section>
+
+    <section id="contact" class="panel contact-panel">
+      <div class="section-title"><h2>Contact Us</h2><span>GET IN TOUCH</span></div>
+      <div class="contact-card">
+        <div class="contact-icon">☎</div>
+        <div>
+          <h3>Need Help?</h3>
+          <p>For support, feedback or Premium-related questions, contact us.</p>
+          <a href="tel:9813690811">📞 9813690811</a>
+        </div>
+      </div>
+    </section>
+
+  </main>
+
+  <div id="modal" class="modal hidden">
+    <div class="modal-box">
+      <button id="close">×</button>
+      <div id="modalOrb" class="modal-orb"></div>
+      <h2 id="modalTitle">EARTH</h2>
+      <p id="modalText"></p>
+      <div class="rotate-note">Drag the 3D object • 360° rotation enabled</div>
+    </div>
+  </div>
+
+  <script type="importmap">
+  {
+    "imports": {
+      "three": "https://cdn.jsdelivr.net/npm/three@0.180.0/build/three.module.js",
+      "three/addons/": "https://cdn.jsdelivr.net/npm/three@0.180.0/examples/jsm/"
+    }
+  }
+  </script>
+  <script type="module" src="script.js"></script>
+</body>
+</html>
