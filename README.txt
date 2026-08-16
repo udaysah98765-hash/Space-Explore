@@ -6,7 +6,7 @@
 3. Internet is required on first load because Three.js is loaded from jsDelivr CDN.
 
 ## Controls
-- Drag mouse / finger = 360° rotate
+- Drag mouse / finger = 210° rotate
 - Scroll / pinch = zoom
 - Explore Now = jump to planets
 - Random Tour = random planet
