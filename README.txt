@@ -19,4 +19,4 @@ Then enable GitHub Pages from Settings → Pages → Deploy from branch.
 ## Premium + Contact
 - Premium section added as a paid/ad-free feature UI.
 - Real payment processing is not included yet; connect a payment gateway before accepting payments.
-- Contact number: 9813690811
+- Contact gmail:udaysah1234565@gmail.com
